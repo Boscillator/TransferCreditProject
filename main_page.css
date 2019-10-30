@@ -1,0 +1,47 @@
+body {
+	background-color: grey;
+}
+
+#header_banner {
+	display: inline-block;
+	text-align: center;
+    width: 100%;  
+	/* padding-top: 150px; */
+	background-color: blue;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 0px;
+	text-align: left;
+}
+
+#log_out {
+	/* display: inline-block; */
+	float: right;
+}
+
+#page_body {
+	display: inline-block;
+	text-align: center;
+    width: 100%;
+}
+
+#search_body {
+	vertical-align: top;
+	display: inline-block;
+	text-align: left;
+    width: 33%;
+	height: 650px;
+	background-color: green;
+	
+}
+
+#results_body {
+	vertical-align: top;
+	display: inline-block;
+	/* text-align: center; */
+    width: 66%;
+	height: 650px;	
+	background-color: red;
+}
