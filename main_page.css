@@ -1,24 +1,46 @@
 body {
-	background-color: grey;
+	background-color: #6d326d;
+	font-family: 'Merriweather', serif;
 }
 
 #header_banner {
-	display: inline-block;
-	text-align: center;
-    width: 100%;  
-	/* padding-top: 150px; */
-	background-color: blue;
+	/*padding-left: 20px;
+	padding-top: 15px;*/
+	background-color: #ffffff;
+	color: #003f91;
+	border: solid black;
+	width: 99.5%; 
+	height: 50px;
 }
 
 h1 {
 	font-size: 30px;
 	margin: 0px;
 	text-align: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	font-family: 'Merriweather', serif;
+}
+
+p {
+	font-family: 'Merriweather', serif;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+select {
+	font-family: 'Merriweather', serif;
+	margin-left: 10px;
 }
 
 #log_out {
-	/* display: inline-block; */
-	float: right;
+	font-family: 'Merriweather', serif;
+	background-color: #e5f4e3;
+	position: absolute;
+	right: 0;
+	margin-right: 18px;
+	margin-top: 10px;
+
 }
 
 #page_body {
@@ -31,22 +53,32 @@ h1 {
 	vertical-align: top;
 	display: inline-block;
 	text-align: left;
-    width: 33%;
+    width: 20%;
 	height: 650px;
-	background-color: green;
+	color: #003f91;
+	background-color: #5da9e9;
+	font-family: 'Merriweather', serif;
 	
 }
 
 #results_body {
 	vertical-align: top;
+	text-align: center;
 	display: inline-block;
-	/* text-align: center; */
-    width: 66%;
+    width: 79%;
 	height: 650px;	
-	background-color: red;
+	background-color: #e5f4e3;
 }
 
 table {
-	width: 100%;
+	width: 98%;
 	margin: 10px;
+	border: solid black;
+	border-collapse: collapse;
+	color: #ffffff;
+	background-color: #6d326d;
+}
+
+td:first-child, th:first-child {
+	border-left: none;
 }
