@@ -12,7 +12,7 @@
     <h2 id="lab-name">{{ LAB NAME }}</h2>
     <time id="lab-time">{{ LAB DATE }}</time>
     <p id="lab-description">{{ LAB DESCRIPTION }}</p>
-    <a href="#" id="lab-instructions">{{Instructions}}</a>
+    <a href="#" id="lab-instructions">Instructions</a>
 
     <form action="/upload" method="POST" enctype="multipart/form-data">
         <label for="submission">Upload your file here: </label>
@@ -20,5 +20,9 @@
         <input type="submit" value="Upload!" />
     </form>
 </main>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="./mini.js"></script>
 </body>
 </html>
