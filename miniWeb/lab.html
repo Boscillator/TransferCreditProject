@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&#9881; Web Systems &#9881;</title>
+</head>
+<body>
+<header>
+    <h1>Web Systems</h1>
+</header>
+<main>
+    <h2 id="lab-name">{{ LAB NAME }}</h2>
+    <time id="lab-time">{{ LAB DATE }}</time>
+    <p id="lab-description">{{ LAB DESCRIPTION }}</p>
+    <a href="#" id="lab-instructions">{{Instructions}}</a>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="submission">Upload your file here: </label>
+        <input id="submission" type="file" name="submission" />
+        <input type="submit" value="Upload!" />
+    </form>
+</main>
+</body>
+</html>
