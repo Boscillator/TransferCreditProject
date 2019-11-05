@@ -1,0 +1,44 @@
+[
+  {
+    "FileName" : "Lab1",
+    "Description" : "Environment Setup",
+    "Instruction" : "https://docs.google.com/document/d/1Gn_1fgbNyYaI79l88NokcrO4_jeHpZyudCLBjhIcf6U/edit",
+    "DueDate" : "2019-09-13"
+  },
+  {
+    "FileName" : "Lab2",
+    "Description" : "HTML,CSS,XML",
+    "Instruction" : "https://docs.google.com/document/d/1IxpiAGUiog64ZY8fqt5NIaaRuoUAr2gz_h19Cb15lzc/edit",
+    "DueDate" : "2019-09-27"
+  },
+  {
+    "FileName" : "Lab3",
+    "Description" : "Resume",
+    "Instruction" : "https://drive.google.com/file/d/1pUhm9QBLZeOovsDiUEQrAB5XmIHWoNWI/view",
+    "DueDate" : "2019-10-04"
+  },
+  {
+    "FileName" : "Lab4",
+    "Description" : "JS, DOM",
+    "Instruction" : "https://docs.google.com/document/d/1rXVffSGK8dcOSEyzf6EJ1YfDvfNCBWrQI4OHDdWV60w/edit?usp=sharing",
+    "DueDate" : "2019-10-11"
+  },
+  {
+    "FileName" : "Lab5",
+    "Description" : "Json, AJAX",
+    "Instruction" : "https://lms.rpi.edu/bbcswebdav/pid-50416-dt-content-rid-248813_1/courses/1909_CSCI_2960_00/Lab%205%20Instructions.html",
+    "DueDate" : "2019-10-18"
+  },
+  {
+    "FileName" : "Lab6",
+    "Description" : "JS, jQuery, jQuery Plugins",
+    "Instruction" : "https://drive.google.com/file/d/1pp5eS6wswuSytn2HtwyXcWu-_sfa4hIE/view",
+    "DueDate" : "2019-10-20"
+  },
+  {
+    "FileName" : "Lab7",
+    "Description" : "Front-end Optimization",
+    "Instruction" : "https://lms.rpi.edu/bbcswebdav/pid-53793-dt-content-rid-343076_1/courses/1909_CSCI_2960_00/lab7instructions.html",
+    "DueDate" : "2019-11-08"
+  }
+]
