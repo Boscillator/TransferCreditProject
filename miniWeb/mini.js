@@ -7,7 +7,7 @@ $(document).ready(function() {
                 $('#lab-name').text(lab.FileName);
                 $('#lab-time').text(lab.DueDate);
                 $('#lab-description').text(lab.Description);
-                $('#lab-instructions').attr('href',lab.Instructions);
+                $('#lab-instructions').attr('href', lab.Instruction);
             }
         }
     })
