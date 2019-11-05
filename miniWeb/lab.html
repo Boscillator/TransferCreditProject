@@ -16,11 +16,13 @@
     <p id="lab-description"></p>
     <a href="#" id="lab-instructions"></a>
 
+    <div id="up">
     <form action="/upload" method="POST" enctype="multipart/form-data">
         <label for="submission">Upload your file here: </label>
-        <input id="submission" type="file" name="submission" />
-        <input type="submit" value="Upload!" />
+        <input class="submit" id="submission" type="file" name="submission" />
+        <input class="submit" type="submit" value="Upload!" />
     </form>
+    </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
