@@ -1,0 +1,31 @@
+body {
+	background-color: 	#F0EAD6;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-size: 35px;
+}
+
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 25px;
+}
+
+header {
+	display: inline-block;
+	text-align: center;
+    width: 100%;  
+	/* padding-top: 150px; */
+	/* background-color: blue; */
+	
+}
+
+main {
+	display: inline-block;
+	text-align: center;
+    width: 100%;  
+	/* padding-top: 150px; */
+	/* background-color: blue; */
+	font-family: 'Open Sans';
+}
