@@ -28,4 +28,17 @@ main {
 	/* padding-top: 150px; */
 	/* background-color: blue; */
 	font-family: 'Open Sans';
+	
+}
+
+.lab_list {
+	padding: 0;
+}
+
+.submit {
+	font-family: 'Open Sans';
+}
+
+#up {
+	padding-top: 20px;
 }
