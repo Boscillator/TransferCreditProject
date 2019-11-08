@@ -30,3 +30,15 @@ CREATE TABLE schools (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Table structure for table `index`
+--
+CREATE TABLE course_index (
+    course_a int(10) UNSIGNED NOT NULL,
+    course_b int(10) UNSIGNED NOT NULL,
+    score double NOT NULL,
+    PRIMARY KEY (course_a, course_b),
+    FOREIGN KEY (course_a) REFERENCES courses(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_b) REFERENCES courses(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
