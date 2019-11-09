@@ -31,6 +31,7 @@ p {
 select {
 	font-family: 'Merriweather', serif;
 	margin-left: 10px;
+	max-width: 75%;
 }
 
 #log_out {
