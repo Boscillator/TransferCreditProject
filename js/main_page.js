@@ -6,7 +6,7 @@ function onSearchFinished(search) {
         template += `
         <tr>
             <td>${course.code}</td>
-            <td>${course.name}</td>
+            <td>${course.course_name}</td>
             <td>${course.school}</td>
         </tr>
         `;
@@ -16,7 +16,11 @@ function onSearchFinished(search) {
 
 function onSearchFunctionChange(e) {
     $.ajax({
-        url: './mock_search.json',
+        url: './api/search.php',
+        type: 'get',
+        data: {
+            id: 1547
+        },
         success: onSearchFinished
     })
 }
