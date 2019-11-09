@@ -14,9 +14,9 @@ function onSearchFinished(search) {
     $("#results_body > table > tbody").html(template);
 }
 
-function onSearchFunctionChange(e) {
+function onCourseSelect(e) {
     $.ajax({
-        url: './api/search.php',
+        url: 'api/search.php',
         type: 'get',
         data: {
             id: 1547
@@ -25,7 +25,23 @@ function onSearchFunctionChange(e) {
     })
 }
 
+function fetchSchools() {
+    $.ajax({
+        url:'api/schools.php',
+        type: 'get',
+        success: function(schools) {
+            $(schools).each(function(_,school) {
+                console.log(school);
+                $("#school_select").append('<option value="' + school.id + '">' + school.name + '</option>')
+            });
+            console.log("AHH");
+            $('#school_select').removeAttr("disabled");
+        }
+    })
+}
+
+
 $(document).ready(function () {
-    console.log("FOO BAR");
-    $("select").on('change', onSearchFunctionChange);
+    fetchSchools();
+    $("#course_title").on('change', onCourseSelect);
 });
