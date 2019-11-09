@@ -14,10 +14,10 @@ class Course
     private function __construct($id, $school, $code, $course_name, $description)
     {
         $this->id = $id;
-        $this->school = $school;
-        $this->code = $code;
-        $this->course_name = $course_name;
-        $this->description = $description;
+        $this->school = utf8_encode($school);
+        $this->code = utf8_encode($code);
+        $this->course_name = trim(utf8_encode($course_name));
+        $this->description = trim(utf8_encode($description));
     }
 
 
@@ -76,6 +76,32 @@ class Course
         $stmt = $cnx->prepare($sql);
         $myId = $this->getId();
         $stmt->bind_param("ii",$myId, $n);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $matches = array();
+        while($row = $result->fetch_assoc()) {
+            array_push($matches, new Course(
+                $row['id'],
+                $row['name'],
+                $row['code'],
+                $row['course_name'],
+                $row['description']
+            ));
+        }
+
+        return $matches;
+    }
+
+    public static function getCoursesForSchool($school_id) {
+        $cnx = getConnection();
+        $sql = "
+            SELECT courses.id, sc.name, code, course_name, description
+            FROM courses
+            JOIN schools sc ON courses.school = sc.id
+            WHERE sc.id = ?";
+        $stmt = $cnx->prepare($sql);
+        $stmt->bind_param("i",$school_id);
         $stmt->execute();
 
         $result = $stmt->get_result();

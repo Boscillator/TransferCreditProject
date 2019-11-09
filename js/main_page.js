@@ -19,9 +19,25 @@ function onCourseSelect(e) {
         url: 'api/search.php',
         type: 'get',
         data: {
-            id: 1547
+            id: $(this).children("option:selected").val()
         },
         success: onSearchFinished
+    })
+}
+
+function onSchoolSelect(e) {
+    $.ajax({
+        url:'api/courses.php',
+        type: 'get',
+        data: {
+            school_id: $(this).children("option:selected").val()
+        },
+        success: function(courses) {
+            $(courses).each(function(_,course) {
+                $("#course_title").append('<option value="' + course.id + '">' + course.course_name + '</option>')
+            });
+            $('#course_title').removeAttr("disabled");
+        }
     })
 }
 
@@ -31,10 +47,8 @@ function fetchSchools() {
         type: 'get',
         success: function(schools) {
             $(schools).each(function(_,school) {
-                console.log(school);
                 $("#school_select").append('<option value="' + school.id + '">' + school.name + '</option>')
             });
-            console.log("AHH");
             $('#school_select').removeAttr("disabled");
         }
     })
@@ -43,5 +57,6 @@ function fetchSchools() {
 
 $(document).ready(function () {
     fetchSchools();
+    $("#school_select").on('change', onSchoolSelect);
     $("#course_title").on('change', onCourseSelect);
 });
