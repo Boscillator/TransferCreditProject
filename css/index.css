@@ -1,0 +1,85 @@
+body {
+	background-color: #e5f4e3;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-size: 35px;
+	color: #003f91;
+	margin: 0px;
+}
+
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 25px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	margin: 0px;
+}
+
+#page_head {
+	display: inline-block;
+	width: 100%;
+	padding-top: 125px;
+	padding-left: 20%;
+}
+
+#page_body {
+	display: inline-block;
+	padding-top: 25px;
+	text-align: center;
+    width: 100%;  
+}
+
+#info {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	text-align:left;
+}
+
+#login {
+	display: inline-block;
+	width: 30%;
+	margin-top: 0px;
+	vertical-align: top;
+	border-radius: 15px;
+}
+
+input {
+	width:400px;
+	height: 50px;
+	border-radius: 15px;
+	font-size: 20px;
+	font-family: 'Open Sans';
+	text-indent: 10px;
+	margin: 5px;
+}
+
+button {
+	font-family: 'Open Sans';
+	border-radius: 15px;
+	font-size: 20px;
+	width:400px;
+	height:50px;
+	margin: 5px;
+}
+
+#sign_in {
+	background-color: #003f91;
+}
+
+#new_account_button {
+	background-color: #6d326d;
+}
+
+img {
+	width:25px;
+	height:25px;
+	padding-right: 30px;
+}
