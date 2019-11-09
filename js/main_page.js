@@ -33,6 +33,8 @@ function onSchoolSelect(e) {
             school_id: $(this).children("option:selected").val()
         },
         success: function(courses) {
+            $('#course_title').empty();
+            $('#course_title').append('<option value="0">--Course Select--</option>')
             $(courses).each(function(_,course) {
                 $("#course_title").append('<option value="' + course.id + '">' + course.course_name + '</option>')
             });
@@ -46,6 +48,8 @@ function fetchSchools() {
         url:'api/schools.php',
         type: 'get',
         success: function(schools) {
+            $('#school_select').empty();
+            $('#school_select').append('<option value="0">--Select School--</option>')
             $(schools).each(function(_,school) {
                 $("#school_select").append('<option value="' + school.id + '">' + school.name + '</option>')
             });
