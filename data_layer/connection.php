@@ -8,6 +8,8 @@ function getConnection() {
         return $_connection_cnx;
     }
 
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
     $connection = new mysqli(MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD, "TransferCredit");
     if ($connection->connect_errno) {
         echo "Failed to connect " . $connection->connect_error;
