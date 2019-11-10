@@ -1,6 +1,10 @@
 <?php
 
 include_once(dirname(__FILE__)."/../connection.php");
+
+/**
+ * Represents a collage or university.
+ */
 class School
 {
     private $id;
@@ -13,6 +17,11 @@ class School
     }
 
     // Conversion
+
+    /**
+     * Converts the school into an associative array so it can be serialized to JSON.
+     * @return array
+     */
     public function toAssoc() {
         return array(
             "id"=>$this->getId(),
@@ -21,13 +30,20 @@ class School
     }
 
     // SQL queries
+
+    /**
+     * Get a list of all schools known to the system.
+     * @return array
+     */
     public static function getAllSchools() {
 
+        // Run the query
         $cnx = getConnection();
         $sql = "SELECT id, name FROM schools";
         $stmt = $cnx->prepare($sql);
         $stmt->execute();
 
+        // Copy results into an array of `School` objects
         $schools = array();
         $result = $stmt->get_result();
         while($row = $result->fetch_assoc()) {

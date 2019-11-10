@@ -2,6 +2,10 @@
 
 include_once(dirname(__FILE__)."/../connection.php");
 
+
+/**
+ * Represents a course you can take at a school.
+ */
 class Course
 {
 
@@ -22,6 +26,11 @@ class Course
 
 
     // Data convection
+
+    /**
+     * Converts the course into an associative array so it can be serialized to JSON.
+     * @return array
+     */
     public function toAssoc() {
         return array(
             "id"=>$this->id,
@@ -36,11 +45,15 @@ class Course
     // Database queries
 
     /**
+     * Get a course object represented by a given ID from the database.
      * @param $id
      * @return Course the course with the id
      */
     public static function getById($id) {
+        // Run the query
         $cnx = getConnection();
+
+        // We use a join statement to get the name of the school, because courses only stores the ID
         $sql = "SELECT courses.id, sc.name, code, course_name, description FROM courses
                 JOIN schools sc ON courses.school = sc.id
                 WHERE courses.id = ? LIMIT 1";
@@ -48,6 +61,7 @@ class Course
         $stmt->bind_param("i",$id);
         $stmt->execute();
 
+        // Copy the results into a new `Course Object`
         $row = $stmt->get_result()->fetch_assoc();
         return new Course(
             $row['id'],
@@ -65,6 +79,10 @@ class Course
      */
     public function getTopMatches($n) {
         $cnx = getConnection();
+
+        // For each course in the database, get it's score by similarity to `$this` course.
+        // Sort theses from highest to lowest and limit to the top $n
+        // Also get each courses school's name.
         $sql = "
             SELECT matches.id, sc.name, code, course_name, description
             FROM courses AS matches
@@ -93,6 +111,11 @@ class Course
         return $matches;
     }
 
+    /**
+     * Get a list of all courses offered at a given school.
+     * @param $school_id int the id of the school to get courses from.
+     * @return array
+     */
     public static function getCoursesForSchool($school_id) {
         $cnx = getConnection();
         $sql = "
