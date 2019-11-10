@@ -1,4 +1,8 @@
-
+/**
+ * Populates the table with the new search information.
+ * Called when new search information is received by AJAX.
+ * @param search
+ */
 function onSearchFinished(search) {
     var template = "";
     $(search).each(function(idx, course) {
@@ -14,6 +18,12 @@ function onSearchFinished(search) {
     $("#results_body > table > tbody").html(template);
 }
 
+
+/**
+ * Called when a new course is selected from the side bar.
+ * Triggers the ajax request to populate the search table.
+ * @param e
+ */
 function onCourseSelect(e) {
     $.ajax({
         url: 'api/search.php',
@@ -25,6 +35,11 @@ function onCourseSelect(e) {
     })
 }
 
+/**
+ * Called when a new school is selected in the side bar.
+ * Triggers Ajax request to fill the course select page.
+ * @param e
+ */
 function onSchoolSelect(e) {
     $.ajax({
         url:'api/courses.php',
@@ -33,8 +48,14 @@ function onSchoolSelect(e) {
             school_id: $(this).children("option:selected").val()
         },
         success: function(courses) {
+
+            // courses is a list of objects {id, course_name, ...}
+
+            // Clear out field and add default selector.
             $('#course_title').empty();
             $('#course_title').append('<option value="0">--Course Select--</option>')
+
+            // Add schools from AJAX
             $(courses).each(function(_,course) {
                 $("#course_title").append('<option value="' + course.id + '">' + course.course_name + '</option>')
             });
@@ -43,11 +64,20 @@ function onSchoolSelect(e) {
     })
 }
 
+/**
+ * Triggers an ajax request to populate the school select field with all available schools.
+ * Called on page load.
+ *
+ * Should this be done serverside?
+ */
 function fetchSchools() {
     $.ajax({
         url:'api/schools.php',
         type: 'get',
         success: function(schools) {
+
+            // schools is a list of objects {id, name}
+
             $('#school_select').empty();
             $('#school_select').append('<option value="0">--Select School--</option>')
             $(schools).each(function(_,school) {
