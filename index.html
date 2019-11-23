@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang='en'>
-	<head>
-		<meta charset='UTF-8'/>
-		<title>Course Lead</title>
-		<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans&display=swap" rel="stylesheet"> 
-		<link rel="stylesheet" type="text/css" href="css/index.css">
-	</head>
-	<body>
-		<section id= "page_head">
-			<h1>Course Lead</h1>
-		</section>
-		<section id= "page_body">
-			<section id= "info">
+
+<head>
+    <meta charset='UTF-8' />
+    <title>Course Lead</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <section id="head">
+        <h1>Course Lead</h1>
 				<h2>Transfer credits made easy!</h2>
-				<p><img src="img/search.png" alt="Search">Browse the course catalog across institutions with a filter based search </p>
-				<p><img src="img/blueprint.png" alt="Search">Plan your transferable courses based on your interests and needs</p>
-				<p><img src="img/hand-shake.png" alt="Search">Share your transfer plans easily with professors and administrators</p>
-			</section>
-			<section id= "login">
-				<form>
-					<input type="text" id="email" class="info-form" placeholder="Email">
-					<input type="password" id="pass" class="info-form"  placeholder="Password"> 
-				</form>
-				<button id="sign_in" onclick="window.location='main_page.html';">Sign In</button>
-				<button id="new_account_button" onclick="window.location='new_account.html';">Create New Account</button> 
-			</section>
 		</section>
-	</body>
+    <section id="main_body">
+        <section id="colleges">
+					<img class="logo" src="img/rpi.png" alt="RPI">
+					<img class="logo" src="img/hvcc.png" alt="HVCC">
+					<img class="logo" src="img/umd.png" alt="UMD">
+					<img class="logo" src="img/rvcc.png" alt="RVCC">
+					<img class="logo" src="img/sunygcc.png" alt="SUNY GCC">
+        </section><section id="info-enter">
+            <section id="info">
+                <p><img class="icon" src="img/search.png" alt="Search"><b>Browse</b> course catalogs from several institutions</p>
+								<p><img class="icon" src="img/filter.png" alt="Filter"><b>Filter</b> classes to find your ideal transfer course</p>
+                <p><img class="icon" src="img/blueprint.png" alt="Blueprint"><b>Craft</b> your tranfer plan to match your academic requirments</p>
+            </section>
+            <section id="enter">
+                <button onclick="window.location='main_page.html';">Enter</button>
+            </section>
+        </section>
+    </section>
+</body>
+
 </html>
