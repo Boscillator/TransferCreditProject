@@ -1,7 +1,14 @@
 import mysql.connector
 import os
 import spacy
+import multiprocessing
+from annoy import AnnoyIndex
+from progressbar import progressbar
 print("Connecting")
+
+K = 50
+N = 25
+
 db = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -18,20 +25,39 @@ cursor.execute("DELETE FROM course_index WHERE TRUE")
 
 print("Running Query")
 cursor.execute("""
-SELECT a.id, a.course_name, b.id, b.course_name FROM courses AS a
-CROSS JOIN courses AS b
-WHERE a.school != b.school
+SELECT id, course_name, school FROM courses
 """)
 
-nlp_cache = {}
 
 print("Indexing...")
-for (a_id, a_desc, b_id, b_desc) in cursor.fetchall():
-    print('\t',a_id,' ' ,b_id)
-    a_desc = nlp_cache.get(a_desc,nlp(a_desc))
-    b_desc = nlp_cache.get(b_desc,nlp(b_desc))
-    score = a_desc.similarity(b_desc)
-    cursor.execute("INSERT INTO course_index VALUES (%s, %s, %s)", (a_id, b_id, score))
+courses = cursor.fetchall()
+
+f = len(nlp(courses[0][1]).vector)
+print(f)
+
+t = AnnoyIndex(f, 'angular')
+school_index = {}
+
+for id, name, school in progressbar(courses):
+  t.add_item(id, nlp(name).vector)
+  school_index[id] = school
+
+print("Building Index")
+t.build(N)
+
+
+print("Getting neighbors")
+results = []
+for id, name, school in progressbar(courses):
+    neighbors = t.get_nns_by_item(id,K, include_distances=True)
+    for n_id, distance in zip(*neighbors):
+        if school_index[id] == school_index[n_id]:
+            continue
+        results.append((id, n_id, distance))
+
+print("Inserting Values")
+for result in progressbar(results):
+    cursor.execute("INSERT INTO course_index VALUES (%s,%s,%s)", result)
 
 db.commit()
 
