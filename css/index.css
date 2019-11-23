@@ -1,85 +1,85 @@
 body {
-	background-color: #e5f4e3;
+	/* https://coolors.co/247ba0-70c1b3-b2dbbf-f3ffbd-ff1654 */
+	background-color: #f9faf9;
 }
 
 h1 {
 	font-family: 'Merriweather', serif;
-	font-size: 35px;
-	color: #003f91;
+	font-size: 2.5em;
+	color: #4564d3;
 	margin: 0px;
 }
 
 h2 {
 	font-family: 'Merriweather', serif;
-	font-size: 25px;
+	font-size: 2em;
+	padding-top: 2%;
 	margin-top: 0px;
-	margin-bottom: 20px;
 }
 
 p {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	font-family: 'Merriweather', serif;
+	font-size: 1em;
 	margin: 0px;
 }
 
-#page_head {
+#head {
+	box-sizing: border-box; 
 	display: inline-block;
 	width: 100%;
-	padding-top: 125px;
-	padding-left: 20%;
+	padding-left: 15%;
+	padding-top: 6%;
 }
 
-#page_body {
+#main-body {
+	box-sizing: border-box; 
 	display: inline-block;
-	padding-top: 25px;
+	width: 100%;
+}
+
+#colleges {
+	box-sizing: border-box; 
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+	padding-left: 15%;
+	padding-top: 2%;
 	text-align: center;
-    width: 100%;  
 }
 
-#info {
+#info-enter {
+	box-sizing: border-box; 
 	display: inline-block;
-	width: 30%;
+	width: 40%;
 	vertical-align: top;
-	text-align:left;
+	padding-left: 5%;
+	padding-top: 2%;
+	text-align: left;
 }
 
-#login {
-	display: inline-block;
-	width: 30%;
-	margin-top: 0px;
-	vertical-align: top;
-	border-radius: 15px;
-}
-
-input {
-	width:400px;
-	height: 50px;
-	border-radius: 15px;
-	font-size: 20px;
-	font-family: 'Open Sans';
-	text-indent: 10px;
-	margin: 5px;
-}
 
 button {
-	font-family: 'Open Sans';
-	border-radius: 15px;
+	font-family: 'Merriweather', serif;
+	padding: 0px;
+	border: none;
+	border-radius: 5px;
 	font-size: 20px;
-	width:400px;
-	height:50px;
+	width:70%;
+	height:2.5em;
 	margin: 5px;
+	background-color: #4564d3;
 }
 
-#sign_in {
-	background-color: #003f91;
+.icon {
+	width:8%;
+	height:8%;
+	vertical-align:middle;
+	padding-bottom: 1%;
+	padding-right: 2%;
 }
 
-#new_account_button {
-	background-color: #6d326d;
-}
-
-img {
-	width:25px;
-	height:25px;
-	padding-right: 30px;
+.logo {
+	width:30%;
+	height:30%;
+	padding-right: 10px;
 }
