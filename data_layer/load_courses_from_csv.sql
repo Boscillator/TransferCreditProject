@@ -9,9 +9,9 @@ INSERT INTO schools VALUES (3,'RPI');
 
 LOAD DATA LOCAL INFILE 'C:\\Users\\oscil\\Documents\\TransferCreditProject\\data\\umd_courses.csv'
 INTO TABLE courses
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
+FIELDS OPTIONALLY ENCLOSED BY '"'
+TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES
 (@col1, @col2, @col3) SET
     school = 1,
