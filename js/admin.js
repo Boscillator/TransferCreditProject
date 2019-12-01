@@ -28,8 +28,8 @@ function onSchoolSelect(e) {
                     <td>${course.school}</td>
                 </tr>
                 `;
-                $("#results_body > table > tbody").html(template);
             });
+            $("#results_body > table > tbody").html(template);
         }
     })
 }
