@@ -15,18 +15,18 @@
                         <th>Course Code</th>
                         <th>Name</th>
                         <th>School</th>
-                        <th>Remove</th>
+                        <th></th>
                     </tr>';
     while($row = $result->fetch_assoc()) {
         $id = $row['id'];
         $code = $row['code'];
         $name = $row['course_name'];
         $school = $row['name'];
-        $output .= '<tr>
+        $output .= '<tr id='.$id.'>
                         <td><div contenteditable="true" onBlur="updateValue(this, \'code\','.$id.')">'.$code.'</div></td>
                         <td><div contenteditable="true" onBlur="updateValue(this, \'course_name\','.$id.')">'.$name.'</div></td>
                         <td>'.$school.'</td>
-                        <td onClick="deleteCourse('.$id.')">Delete</td>
+                        <td><a href="javascript:void(0);" onClick="deleteCourse('.$id.')">Delete</a></td>
                     </tr>';
     }
     $output .= '</table>';
