@@ -1,3 +1,8 @@
+<?php
+    include 'data_layer/connection.php';
+    $db = getconnection();
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -20,18 +25,29 @@
 </div>
 <div id="container">
     <div id="search_body">
-    <form>
+    <?php
+    if (isset($_POST['add'])) {
+        $codeForDb = trim($_POST["code"]);  
+        $courseForDb = trim($_POST["name"]);
+        $schoolForDb = $_POST['school'];
+        
+        $insQuery = "insert into courses (`school`,`code`,`course_name`) values(?,?,?)";
+        $statement = $db->prepare($insQuery);
+
+        $statement->bind_param("sss",$schoolForDb,$codeForDb,$courseForDb);
+
+        $statement->execute();
+    }
+    ?>
+    <form method='post' action='admin.php'>
         <h2>Select School</h2>
-        <select disabled id="school_select">
+        <select name="school" disabled id="school_select">
             <option value="">SELECT A SCHOOL</option>
         </select>
-    </form>
-    <form id='new_course'>
         <h2>Add Course</h2>
         <p>Code: <br><input type="text" name="code" /></p>
         <p>Course Name: <br><input type="text" name="name" /></p>
-        <p>School: <br><input type="text" name="school" /></p>
-        <button type='submit' name='submit'>Submit</button>
+        <button type='submit' name='add'>Submit</button>
     </form>
     </div>
     <section id="results_body">
