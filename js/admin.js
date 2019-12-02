@@ -1,17 +1,17 @@
 function updateValue(element, column, id){
     var value = element.innerText;
 
-    console.log(value + column);
+    console.log(value + column + id);
     $.ajax({
         url: 'api/update.php',
         type: 'post',
         data: {
             value: value,
             column: column,
-            id: id,
+            id: id
         },
-        success:function(){
-
+        success:function(data){
+            $('#results_body').append(data);
         }
     })
 }

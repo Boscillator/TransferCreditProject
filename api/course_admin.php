@@ -22,8 +22,8 @@
         $name = $row['course_name'];
         $school = $row['name'];
         $output .= '<tr>
-                        <td><div contenteditable="true" onBlur="updateValue(this, "code")">'.$code.'</div></td>
-                        <td><div contenteditable="true" onBlur="updateValue()">'.$name.'</div></td>
+                        <td><div contenteditable="true" onBlur="updateValue(this, \'code\','.$id.')">'.$code.'</div></td>
+                        <td><div contenteditable="true" onBlur="updateValue(this, \'course_name\','.$id.')">'.$name.'</div></td>
                         <td>'.$school.'</td>
                     </tr>';
     }
