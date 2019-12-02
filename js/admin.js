@@ -66,7 +66,7 @@ function deleteCourse(id) {
             id:id
         },
         success: function() {
-            this.hide();
+            $('#'+id).hide();
         }
     })
 }
