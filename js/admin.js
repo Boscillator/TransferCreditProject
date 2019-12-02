@@ -58,6 +58,19 @@ function fetchSchools() {
     })
 }
 
+function deleteCourse(id) {
+    $.ajax({
+        url:'api/delete.php',
+        type:'post',
+        data: {
+            id:id
+        },
+        success: function() {
+            $('#'+id).hide();
+        }
+    })
+}
+
 
 $(document).ready(function () {
     fetchSchools();
