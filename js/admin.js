@@ -1,7 +1,19 @@
 function updateValue(element, column, id){
     var value = element.innerText;
 
-    console.log(element+column+id);
+    console.log(value + column);
+    $.ajax({
+        url: 'api/update.php',
+        type: 'post',
+        data: {
+            value: value,
+            column: column,
+            id: id,
+        },
+        success:function(){
+
+        }
+    })
 }
 
 /**
@@ -11,25 +23,13 @@ function updateValue(element, column, id){
  */
 function onSchoolSelect(e) {
     $.ajax({
-        url:'api/courses.php',
-        type: 'get',
+        url:'api/course_admin.php',
+        type: 'post',
         data: {
             school_id: $(this).children("option:selected").val()
         },
-        success: function(courses) {
-            var template="";
-            // courses is a list of objects {id, course_name, ...}
-            // Add schools from AJAX
-            $(courses).each(function(_,course) {
-                template += `
-                <tr>
-                    <td><div contenteditable="true" onblur="updateValue()">${course.code}<div></td>
-                    <td><div contenteditable="true">${course.course_name}<div></td>
-                    <td>${course.school}</td>
-                </tr>
-                `;
-            });
-            $("#results_body > table > tbody").html(template);
+        success: function(data) {
+            $('#results_body').html(data);
         }
     })
 }
