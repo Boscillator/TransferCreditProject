@@ -1,0 +1,143 @@
+body, html, .inner, .outer {
+	background-color: #f9faf9;
+	font-family: 'Merriweather', serif;
+    height: 100%;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-size: 2.5em;
+	color: #4564d3;
+	margin: 0px;
+}
+
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 2em;
+	margin: 0px;
+}
+
+p {
+	font-family: 'Merriweather', serif;
+	font-weight: bold;
+}
+
+select {
+	font-family: 'Merriweather', serif;
+	border-radius: 5px;
+	font-size: 20px;
+	margin: 0px;
+	width:90%;
+	height:2em;
+	border-style: solid;
+	border-color: #4564d3;
+	text-align: left;
+	text-overflow: ellipsis;
+	margin-bottom: 2%;
+}
+
+th {
+	font-size: 2em;
+	padding-left: 1%;
+}
+
+td {
+	font-size: 1.2em;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 1%;
+	border-bottom: solid;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+button {
+	font-family: 'Merriweather', serif;
+	border-radius: 5px;
+	font-size: 20px;
+	width:6em;
+	height:2em;
+	background-color: white;
+	float: right;
+	border-style: solid;
+	border-color: #4564d3;
+}
+
+#header_banner {
+	display: inline-block;
+	width: 100%;
+	height: 10%;
+}
+
+#heading {
+	font-family: 'Merriweather', serif;
+	vertical-align: top;
+	display: inline-block;
+	width: 45%;
+	height: 100%;
+	padding-left: 5%;
+}
+
+#log_out {
+	font-family: 'Merriweather', serif;
+	display: inline-block;
+	width: 45%;
+	height: 100%;
+	padding-right: 5%;
+
+}
+
+#page_body {
+	display: inline-block;
+	text-align: left;
+    width: 100%;
+	height: 90%;
+}
+
+#search_body {
+	display: inline-block;
+	font-family: 'Merriweather', serif;
+	vertical-align: top;
+	width: 25%;
+	height: 95%;
+	padding-left : 5%;
+}
+
+#results_body {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+    width: 65%;
+	height: 95%;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+	color: #ffffff;
+	background-color: #4564d3;
+}
+
+.course_code {
+	width: 25%;
+}
+
+.name {
+	width: 50%;
+}
+
+.school {
+	width: 25%;
+}
+
+.icon {
+	width:20%;
+	height:40%;
+	padding-right: 3px;
+}
+
+td:first-child, th:first-child {
+	border-left: none;
+}

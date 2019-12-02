@@ -2,21 +2,20 @@
 <html lang='en'>
 <head>
     <meta charset='UTF-8'/>
-    <title>Transfer Cred Mockup</title>
+    <title>Course Lead</title>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/main_page.css">
+    <link rel="stylesheet" type="text/css" href="main_page.css">
 </head>
 <body>
 <section id="header_banner">
-    <button id="log_out" onclick="window.location='index.html';">Log Out</button>
-    <h1>Transfer Credit Mockup</h1>
-    
+    <section id = 'heading'><h1>Course Lead</h1></section><section id = 'log_out'>
 </section>
 <section id="page_body">
+	<!-- <section id = "search_body"> -->
     <form id="search_body">
-        <p>School</p>
+        <!-- <h2>School</h2> -->
         <select disabled id="school_select">
-            <option value="">SELECT A SCHOOL</option>
+            <option value="">All Schools</option>
         </select>
         <!--
         I'm removing this from the prototype.
@@ -27,7 +26,7 @@
             <option value="subject3">Computer Science</option>
         </select>
         -->
-        <p>Course Title</p>
+        <!-- <h2>Course Title</h2> -->
         <select disabled id="course_title">
         </select>
         <!--
@@ -38,14 +37,13 @@
             <option value="credits3">3</option>
         </select>
         -->
-    </form>
-    <section id="results_body">
+    </form><section id="results_body">
         <table>
             <thead>
                 <tr>
-                    <th>Course Code</th>
-                    <th>Name</th>
-                    <th>School</th>
+                    <th class="course_code">Course Code</th>
+                    <th class="name">Name</th>
+                    <th class="school">School</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +55,6 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-<script src="js/main_page.js"></script>
+<script src="main_page.js"></script>
 </body>
 </html>

@@ -89,7 +89,7 @@ class Course
             JOIN course_index ci ON matches.id = ci.course_b
             JOIN schools sc ON matches.school = sc.id
             WHERE ci.course_a = ?
-            ORDER BY ci.score DESC
+            ORDER BY ci.score ASC
             LIMIT ?";
         $stmt = $cnx->prepare($sql);
         $myId = $this->getId();
