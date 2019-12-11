@@ -1,3 +1,11 @@
+function getPrefixFromCode(code) {
+    return code.match(/[A-Z]+/)[0];
+}
+
+function unique(a) {
+    return a.filter((item, i, ar) => ar.indexOf(item) === i);
+}
+
 /**
  * Populates the table with the new search information.
  * Called when new search information is received by AJAX.
@@ -35,6 +43,19 @@ function onCourseSelect(e) {
     })
 }
 
+function onPrefixSelect(e) {
+    const prefix = $(this).children("option:selected").val();
+    if(prefix === "all") {
+        $("#course_title option").show();
+        $("#course_title").val(0);
+        return;
+    }
+    $("#course_title option").hide();
+    $(`#course_title option[data-prefix='${prefix}']`).show();
+    $("#course_title option[data-prefix='all']").show();
+    $("#course_title").val(0);
+}
+
 /**
  * Called when a new school is selected in the side bar.
  * Triggers Ajax request to fill the course select page.
@@ -53,13 +74,22 @@ function onSchoolSelect(e) {
 
             // Clear out field and add default selector.
             $('#course_title').empty();
-            $('#course_title').append('<option value="0">--Course Select--</option>')
+            $('#course_title').append('<option data-prefix="all" value="0">--Course Select--</option>')
 
             // Add schools from AJAX
             $(courses).each(function(_,course) {
-                $("#course_title").append('<option value="' + course.id + '">' + course.course_name + '</option>')
+                $("#course_title").append('<option data-prefix="' + getPrefixFromCode(course.code) + '" value="' + course.id + '">' + course.course_name + '</option>')
             });
             $('#course_title').removeAttr("disabled");
+
+            // Add prefixes to prefix select;
+            const prefixes = unique(courses.map(c => c.code).map(getPrefixFromCode)).sort();
+            $("#prefix").empty();
+            $("#prefix").append('<option value="all">All Prefixes</option>')
+            $(prefixes).each(function(_, prefix) {
+                $("#prefix").append(`<option value="${prefix}">${prefix}</option>`);
+            });
+            $("#prefix").removeAttr("disabled");
         }
     })
 }
@@ -93,4 +123,5 @@ $(document).ready(function () {
     fetchSchools();
     $("#school_select").on('change', onSchoolSelect);
     $("#course_title").on('change', onCourseSelect);
+    $("#prefix").on('change',onPrefixSelect);
 });
