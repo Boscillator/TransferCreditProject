@@ -8,7 +8,7 @@
 </head>
 <body>
 <section id="header_banner">
-    <section id = 'heading'><h1>Course Lead</h1></section><section id = 'log_out'>
+    <section id = 'heading'><h1>Course Lead</h1></section><section id = 'log_out'></section>
 </section>
 <section id="page_body">
 	<!-- <section id = "search_body"> -->
@@ -17,15 +17,9 @@
         <select disabled id="school_select">
             <option value="">All Schools</option>
         </select>
-        <!--
-        I'm removing this from the prototype.
-        <p>Subject</p>
-        <select>
-            <option value="subject1">Alligator Wrestling</option>
-            <option value="subject2">Break Dancing</option>
-            <option value="subject3">Computer Science</option>
+        <select disabled id="prefix">
+            <option value="*">All Prefixes</option>
         </select>
-        -->
         <!-- <h2>Course Title</h2> -->
         <select disabled id="course_title">
         </select>
@@ -37,7 +31,8 @@
             <option value="credits3">3</option>
         </select>
         -->
-    </form><section id="results_body">
+    </form>
+    <section id="results_body">
         <table>
             <thead>
                 <tr>
@@ -55,6 +50,6 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-<script src="main_page.js"></script>
+<script src="js/main_page.js"></script>
 </body>
 </html>
